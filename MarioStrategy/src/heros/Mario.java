@@ -11,7 +11,7 @@ public class Mario extends Human {
 
 	@Override
 	public void display() {
-		System.out.println( "It's me, mario" );
+		System.out.println( "It's me, Mario" );
 
 	}
 	

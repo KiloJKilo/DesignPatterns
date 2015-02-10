@@ -1,6 +1,7 @@
 package game;
 
 import heroPowers.SuperMushroom;
+import heroPowers.SuperStar;
 import heros.Mario;
 
 public class Game {
@@ -13,8 +14,9 @@ public class Game {
 		// would create sprite, but for now it just gives a text message
 		myMario.display();
 
-		// just checking his jump 'stat'
-		System.out.println( myMario.getJump() );
+		// Message stating what was created
+		System.out.println( "Created myMario with a jump value of " + myMario.getJump() + ". A Speed value of " + 
+				myMario.getSpeed() + ". An accelration value of " + myMario.getAcceleration() + ". A strength value of " + myMario.getStrength());
 
 		// calling a move method passing in myMario's speed and acceleration attributes
 		myMario.move( myMario.getSpeed(), myMario.getAcceleration() );
@@ -35,6 +37,15 @@ public class Game {
 
 		// what's his status now?
 		System.out.println( myMario.getPowerStatus() );
+
+		// mario gets a SuperStar
+		myMario.setPowerBehavior( new SuperStar( myMario ) );
+
+		// what's his status now?
+		System.out.println( myMario.getPowerStatus() );
+
+		// check mario's speed
+		System.out.println( "My speed = " + myMario.getSpeed() );
 
 		// Mario takes damage again
 		System.out.println( dm.DecideFate( myMario ) );
